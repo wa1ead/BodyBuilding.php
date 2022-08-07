@@ -1,0 +1,23 @@
+<?php
+    include_once 'header.php';
+?>
+    <div class="container my-5">
+        <div class="mb-3">
+            <h2>Login</h2>
+            <form action="includes/login.inc.php" method="post">
+                <div class="mb-3">
+                    <label>EMAIL</label>
+                    <input type="text" name="email" placeholder="Email...">
+                </div>
+                <div class="mb-3">
+                    <label>PASSWORD</label>
+                    <input type="password" name="pwd" placeholder="Password...">
+                </div>
+                    <button type="submit" name="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+   
+<?php
+    include_once 'footer.php';
+?>
