@@ -66,3 +66,30 @@ function createUser($conn, $name, $email, $username, $password){
     header('location: ../signup.php?error=none');
     exit();
 }
+
+function emptyInputLogin($username, $password){
+    $result= true;
+    if(empty($username) || empty($password)){
+        $result= false;
+    }
+    return $result;
+}
+function loginUser($conn, $username, $password){
+    $usernameMatch= usernameMatch($conn, $username, $username);
+    if($usernameMatch === false){
+        header('location: ../login.php?error=loginFailed');
+        exit();
+    }
+    $passwordHashed= $usernameMatch['usersPASSWORD'];
+    $checkPassword= password_verify($password, $passwordHashed);
+    if($checkPassword === false){
+        header('location: ../login.php?error=loginFailed');
+    }
+    else if($checkPassword === true){
+        session_start();
+        $_SESSION['userid']= $usernameMatch['usersID'];
+        $_SESSION['userusername']= $usernameMatch['usersUSERNAME'];
+        header('location: ../index.php');
+        exit();
+    }
+}

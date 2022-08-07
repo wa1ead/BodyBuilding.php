@@ -56,7 +56,25 @@
     text-transform: uppercase;
 }
 
-
+/*.signup-box h2{
+    text-align: center;
+    padding-top: 15px;
+}
+form{
+    width: 300px;
+    margin-left: 20px;
+}
+form label{
+    display: flex;
+    margin-top: 20px;
+    font-size: 18px;
+}
+form input{
+    width: 100%; 
+    padding: 7px;
+    border: none;
+    border: 1px solid grey;
+}*/
 
 .content{
     width: 100%;
